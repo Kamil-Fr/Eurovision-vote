@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './App.scss';
+import './scss/App.scss';
 import SemiFinal1 from './components/semiFinalFirst';
 import supabase from './config/SupabaseClient';
 import SemiFinal2 from './components/votingSemiFinal';
@@ -21,7 +21,8 @@ function App() {
   return (
     <>
       <SemiFinal1 />
-      <SemiFinal2 />
+      
+ 
       {/* <ul>
         {countries.map((country) => (
           <li key={country.name}>{country.name}</li>

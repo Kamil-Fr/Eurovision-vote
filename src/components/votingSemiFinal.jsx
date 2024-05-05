@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import supabase from '../config/SupabaseClient';
+import '../scss/App.scss';
 
 const VotingSemiFinal = () => {
   const [showPoints, setShowPoints] = useState(false);
@@ -96,11 +97,13 @@ const VotingSemiFinal = () => {
                 {!selectedCountries[index] && (
                   <select onChange={(e) => handleCountryChange(e, index)}>
                     <option value="">Wybierz państwo</option>
-                    {countries.map((country, index) => (
-                      <option key={index} value={country.name}>
-                        {country.name}
-                      </option>
-                    ))}
+                    {countries
+                      .filter(country => !Object.values(selectedCountries).includes(country.name)) // Wykluczenie już wybranych państw
+                      .map((country, index) => (
+                        <option key={index} value={country.name}>
+                          {country.name}
+                        </option>
+                      ))}
                   </select>
                 )}
               </li>
@@ -115,4 +118,3 @@ const VotingSemiFinal = () => {
 };
 
 export default VotingSemiFinal;
-

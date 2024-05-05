@@ -1,0 +1,44 @@
+.voting-container {
+    margin-bottom: 20px;
+  }
+  
+  .points-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .points-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .country-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .country-item {
+    margin-bottom: 10px;
+  }
+  
+  .country-item select {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  
+  .edit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover {
+    background-color: #218838;
+  }
+  
