@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import supabase from '../supabase-config';
+import supabase from '../config/SupabaseClient';
 import '../scss/_semiFinalFirst.scss';
 
 const SemiFinal1 = () => {

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
 import SemiFinal1 from './components/semiFinalFirst';
+import supabase from './config/SupabaseClient';
 
 
 function App() {
+  console.log(supabase);
   const [count, setCount] = useState(0);
   const [countries, setCountries] = useState([]);
 
@@ -19,7 +21,7 @@ function App() {
   return (
     <>
       <SemiFinal1 />
-      <ul>
+      {/* <ul>
         {countries.map((country) => (
           <li key={country.name}>{country.name}</li>
         ))}
@@ -39,9 +41,9 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+      <p className="read-the-docs">Click on the Vite and React logos to learn more</p> */}
     </>
   );
-}
+        }
 
 export default App;
