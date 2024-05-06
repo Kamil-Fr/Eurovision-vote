@@ -1010,7 +1010,7 @@ const App = () => {
   // Pokaż 10 krajów z największą liczbą punktów (losowo) ułożonych alfabetycznie
   const pokazNajwiecejPunktow = () => {
     const losoweKraje = Object.keys(punkty).sort().slice(0, 10);
-    return losoweKraje.map(kraj => <li key={kraj}>{kraj}: {punkty[kraj] || 0}</li>);
+    return losoweKraje.map(kraj => <li key={kraj}>{kraj}: {[]}</li>);
   };
 
   // Pokaż wszystkie kraje z punktami ułożone malejąco
@@ -1050,7 +1050,7 @@ const App = () => {
           przyznajPunkty(krajPrzyznajacy, punkty, krajOdbierajacy);
         }}>Przyznaj punkty</button>
       </div>
-      <div>
+         <div>
         <h2>Historia przyznawania punktów:</h2>
         <div>
           <h3>Filtruj po kraju przyznającym punkty:</h3>
@@ -1095,3 +1095,6 @@ const App = () => {
 };
 
 export default App;
+
+
+
