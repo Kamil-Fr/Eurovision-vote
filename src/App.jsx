@@ -3,6 +3,7 @@ import './scss/App.scss';
 import SemiFinal1 from './components/semiFinalFirst';
 import supabase from './config/SupabaseClient';
 import SemiFinal2 from './components/votingSemiFinal';
+import Test2 from './components/Test 2';
 
 function App() {
   console.log(supabase);
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <>
-      <SemiFinal1 />
+      <Test2 />
       
  
       {/* <ul>

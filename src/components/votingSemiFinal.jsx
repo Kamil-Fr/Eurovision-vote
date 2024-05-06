@@ -6,11 +6,11 @@ const VotingSemiFinal = () => {
   const [showPoints, setShowPoints] = useState(false);
   const [countries, setCountries] = useState([]);
   const [selectedCountries, setSelectedCountries] = useState({});
-  const [totalPoints, setTotalPoints] = useState(0); // Nowy stan do przechowywania sumy punktów
+  const [totalPoints, setTotalPoints] = useState(0);
 
   useEffect(() => {
     fetchCountries();
-    sumPoints(); // Po załadowaniu komponentu, obliczamy sumę punktów
+    sumPoints();
   }, []);
 
   const fetchCountries = async () => {
@@ -41,7 +41,6 @@ const VotingSemiFinal = () => {
   };
 
   const handleSavePoints = async () => {
-    // Zapisz punkty dla każdego wybranego państwa
     try {
       const promises = Object.keys(selectedCountries).map(async (index) => {
         const countryName = selectedCountries[index];
@@ -51,14 +50,13 @@ const VotingSemiFinal = () => {
 
       await Promise.all(promises);
       console.log('Points saved successfully!');
-      sumPoints(); // Po zapisaniu punktów, obliczamy ponownie sumę punktów
+      sumPoints();
     } catch (error) {
       console.error('Error saving points:', error.message);
     }
   };
 
   const sumPoints = async () => {
-    // Oblicz sumę punktów dla wszystkich państw
     try {
       const { data, error } = await supabase
         .from('VotingResults')
@@ -98,7 +96,7 @@ const VotingSemiFinal = () => {
                   <select onChange={(e) => handleCountryChange(e, index)}>
                     <option value="">Wybierz państwo</option>
                     {countries
-                      .filter(country => !Object.values(selectedCountries).includes(country.name)) // Wykluczenie już wybranych państw
+                      .filter(country => !Object.values(selectedCountries).includes(country.name))
                       .map((country, index) => (
                         <option key={index} value={country.name}>
                           {country.name}
@@ -110,7 +108,7 @@ const VotingSemiFinal = () => {
             ))}
           </ul>
           <button onClick={handleSavePoints}>Zapisz punkty</button>
-          <p>Suma punktów: {totalPoints}</p> {/* Wyświetlanie sumy punktów */}
+          <p>Suma punktów: {totalPoints}</p>
         </div>
       )}
     </div>
