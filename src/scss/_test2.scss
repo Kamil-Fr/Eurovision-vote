@@ -1,14 +1,20 @@
 $primary-color: #4285F4; // Kolor główny
 $secondary-color: #DB4437; // Kolor dodatkowy
+$neutral-color: #333; // Kolor neutralny
 
 body {
   font-family: Arial, sans-serif;
+  background-color: #f5f5f5; // Kolor tła
+  color: $neutral-color;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); // Cień
 }
 
 h1 {
@@ -33,6 +39,12 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
 }
 
 ul {
@@ -74,4 +86,5 @@ li {
 .wszystkie-kraje {
   margin-top: 20px;
 }
+
 
