@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Kraje = ["Sweden","Ukraine","Germany","Luxembourg","Netherlands", "Israel","Lithuania", "Spain","Estonia", "Ireland", "Latvia", "Greece", "United Kingdom", "Norway", "Italy", "Serbia","Finland","Portugal", "Armenia", "Cyprus", "Switzerland", "Slovenia", "Croatia", "Georgia","France", "Austria", "Poland",  "Iceland",   "Moldova", "Azerbaijan", "Australia",     "Rest of the World",  "Albania", "Czechia", "San Marino", "Denmark", "Malta", "Belgium" ];
 const MozliwePunkty = [12, 10, 8, 7, 6, 5, 4, 3, 2, 1];
 
-const App = () => {
+const Test3 = () => {
   const [punkty, setPunkty] = useState(JSON.parse(localStorage.getItem('punkty')) || {});
   const [historia, setHistoria] = useState(JSON.parse(localStorage.getItem('historia')) || []);
   const [filtrKraju, setFiltrKraju] = useState('');
@@ -63,7 +63,7 @@ const App = () => {
       <div>
         <h2>Wybierz kraj przyznający punkty:</h2>
         <select id="krajPrzyznajacy" onChange={(e) => zmienKrajPrzyznajacy(e.target.value)}>
-          {Kraje.map(kraj => <option key={kraj}>{kraj}</option>)}
+          {Kraje.map((kraj, index) => <option key={kraj} style={{fontWeight: index < 26 ? 'bold' : 'normal'}}>{kraj}</option>)}
         </select>
         <h2>Wybierz punkty:</h2>
         <select id="punkty">
@@ -81,7 +81,7 @@ const App = () => {
           przyznajPunkty(krajPrzyznajacy, punkty, krajOdbierajacy);
         }}>Przyznaj punkty</button>
       </div>
-         <div>
+      <div>
         <h2>Historia przyznawania punktów:</h2>
         <div>
           <h3>Filtruj po kraju przyznającym punkty:</h3>
@@ -125,7 +125,5 @@ const App = () => {
   );
 };
 
-export default App;
-
-
+export default Test3;
 
