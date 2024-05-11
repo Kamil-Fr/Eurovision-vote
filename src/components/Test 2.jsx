@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const Kraje = ["Sweden","Ukraine","Germany","Luxembourg","Netherlands", "Israel","Lithuania", "Spain","Estonia", "Ireland", "Latvia", "Greece", "United Kingdom", "Norway", "Italy", "Serbia","Finland","Portugal", "Armenia", "Cyprus", "Switzerland", "Slovenia", "Croatia", "Georgia","France", "Austria", "Poland",  "Iceland",   "Moldova", "Azerbaijan", "Australia",     "Rest of the World",  "Albania", "Czechia", "San Marino", "Denmark", "Malta", "Belgium" ];
-const MozliwePunkty = [12, 10, 8, 7, 6, 5, 4, 3, 2, 1];
+const MozliwePunkty = [12, 10, 8, 7, 6, 5, 4, 3, 2, 1, 16, 19, 23, 30, 33, 36, 37, 40, 45, 48, 59, 65, 67, 70, 74, 77, 91, 93, 103, 148, 168, 169, 176, 184, 263];
 
-const App = () => {
+const Test2 = () => {
   const [punkty, setPunkty] = useState(JSON.parse(localStorage.getItem('punkty')) || {});
   const [historia, setHistoria] = useState(JSON.parse(localStorage.getItem('historia')) || []);
   const [filtrKraju, setFiltrKraju] = useState('');
@@ -125,7 +125,7 @@ const App = () => {
   );
 };
 
-export default App;
+export default Test2;
 
 
 
